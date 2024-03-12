@@ -47,21 +47,6 @@ function Popular() {
 
   return (
     <>
-      <div className="mx-auto w-3/5 my-5">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Search for movies"
-          className="border border-black w-full mb-3 p-3 rounded-full"
-        />
-        <input
-          type="button"
-          value="Search for movies"
-          placeholder=""
-          className="bg-blue-700 text-white w-full p-3 cursor-pointer"
-        />
-      </div>
       <div className="mx-auto w-[98%]">
         <h1 className="bg-blue-500 text-center w-full ">Popular</h1>
         <div>
@@ -83,16 +68,6 @@ function Popular() {
               </div>
             ))}
         </div>
-
-        {/* <div>
-          {moviesDetails.id.map((Detail) => (
-            <div>
-              <div className="text-2xl font-bold ">{Detail.title} </div>
-              <div>{Detail.release_date} </div>
-              <div>{Detail.overview} </div>
-            </div>
-          ))}
-        </div> */}
       </div>
     </>
   );

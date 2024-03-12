@@ -5,7 +5,8 @@ function PopularPage() {
     "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
 
   const [movies, setMovies] = useState({});
-  const [moviesDetails, setMoviesDetails] = useState({});
+  // const [moviesDetails, setMoviesDetails] = useState({});
+  // const [searchMovies, setSearchMovies] = useState ("")
 
   async function popularMovies() {
     const response = await fetch(url, {
@@ -21,18 +22,18 @@ function PopularPage() {
     setMovies(data);
   }
   // 1096197;
-  async function movieDetails() {
-    const response = await fetch("https://api.themoviedb.org/3/movie/848538", {
-      headers: {
-        Authorization: `Bearer ${import.meta.env.VITE_MOVIEDB_ACCESS_TOKEN}`,
-        accept: "application/json",
-      },
-    });
-    const data = await response.json();
+  // async function movieDetails() {
+  //   const response = await fetch("https://api.themoviedb.org/3/movie/848538", {
+  //     headers: {
+  //       Authorization: `Bearer ${import.meta.env.VITE_MOVIEDB_ACCESS_TOKEN}`,
+  //       accept: "application/json",
+  //     },
+  //   });
+  //   const data = await response.json();
 
-    console.log("Movie Details", data);
-    setMoviesDetails(data);
-  }
+  //   console.log("Movie Details", data);
+  //   setMoviesDetails(data);
+  // }
 
   const websiteURL = "https://media.themoviedb.org/t/p/w300_and_h450_bestv2";
 
@@ -43,24 +44,13 @@ function PopularPage() {
 
   // React-Movie-App
 
+  // const searchMovies = (e) => {
+  //   e.preventDefault();
+  // };
+
   return (
     <>
-      <div className="mx-auto w-3/5 my-5">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Search for movies"
-          className="border border-black w-full mb-3 p-3 rounded-full"
-        />
-        <input
-          type="button"
-          value="Search for movies"
-          placeholder=""
-          className="bg-blue-700 text-white w-full p-3 cursor-pointer"
-        />
-      </div>
-      <div className="mx-auto w-[98%]">
+      <div className="mx-auto w-[98%] bg-blue-800">
         <h1>This is the Movie Page</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {movies.results &&

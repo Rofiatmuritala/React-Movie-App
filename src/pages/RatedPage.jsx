@@ -28,24 +28,26 @@ function RatedPage() {
 
   return (
     <>
-      <div className="bg-blue-500  text-4xl bold py-3 my-5">
-        <h1>TOP RATED</h1>
-      </div>
-      <div className="grid grid-cols-5 gap-4 ">
-        {topRatedMovies.results &&
-          topRatedMovies.results.map((ratedMovies) => (
-            <div>
+      <div className="bg-blue-500 ">
+        <div className=" text-4xl bold py-3 my-5 bg-blue-800">
+          <h1>TOP RATED</h1>
+        </div>
+        <div className="grid grid-cols-5 gap-4 ">
+          {topRatedMovies.results &&
+            topRatedMovies.results.map((ratedMovies) => (
               <div>
-                <img
-                  src={`${websiteURL}${ratedMovies.poster_path}`}
-                  alt=""
-                  className="w-full"
-                />
+                <div>
+                  <img
+                    src={`${websiteURL}${ratedMovies.poster_path}`}
+                    alt=""
+                    className="w-full"
+                  />
+                </div>
+                <h2>{ratedMovies.title} </h2>
+                <div>{ratedMovies.release_date} </div>
               </div>
-              <h2>{ratedMovies.title} </h2>
-              <div>{ratedMovies.release_date} </div>
-            </div>
-          ))}
+            ))}
+        </div>
       </div>
     </>
   );

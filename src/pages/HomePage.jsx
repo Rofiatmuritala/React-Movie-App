@@ -5,10 +5,10 @@ import Hero from "../components/Hero";
 
 function HomePage() {
   return (
-    <div>
+    <div className="bg-blue-800">
       <Hero />
-      {/* <Popular />
-      <Toprated /> */}
+      <Popular />
+      <Toprated />
     </div>
   );
 }
