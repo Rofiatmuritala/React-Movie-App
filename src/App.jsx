@@ -8,6 +8,7 @@ import PopularPage from "./pages/PopularPage";
 import RatedPage from "./pages/RatedPage";
 import HomePage from "./pages/HomePage";
 import SearchPage from "./pages/SearchPage";
+import DetailsPage from "./pages/DetailsPage";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path="/search" element={<SearchPage />}></Route>
           <Route path="/popular" element={<PopularPage />}></Route>
           <Route path="/toprated" element={<RatedPage />}></Route>
-          {/* <Route path="/"  element={<PopularDetailPage />}></Route> */}
+          <Route path="/movies/:id" element={<DetailsPage />}></Route>
         </Routes>
       </BrowserRouter>
     </>

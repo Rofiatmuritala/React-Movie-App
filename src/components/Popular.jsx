@@ -39,7 +39,6 @@ function Popular() {
   const websiteURL = "https://media.themoviedb.org/t/p/w300_and_h450_bestv2";
 
   useEffect(() => {
-    // movieDetails();
     popularMovies();
   }, []);
 
@@ -58,11 +57,13 @@ function Popular() {
             movies.results.slice(0, 5).map((movie) => (
               <div>
                 <div>
-                  <img
-                    src={`${websiteURL}${movie.poster_path}`}
-                    alt=""
-                    className="w-full"
-                  />
+                  <Link to={`/detail/${movie.id}`}>
+                    <img
+                      src={`${websiteURL}${movie.poster_path}`}
+                      alt=""
+                      className="w-full"
+                    />
+                  </Link>
                 </div>
                 <div className="text-2xl font-bold ">{movie.title} </div>
               </div>

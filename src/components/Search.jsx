@@ -37,12 +37,12 @@ function Search() {
           className="border border-black w-full mb-3 p-3 rounded-full"
           onChange={(e) => setSearchKey(e.target.value)}
         />
-        <input
+        {/* <input
           type="submit"
           value="Search for movies"
           placeholder=""
           className="bg-blue-700 text-white w-full p-3 cursor-pointer"
-        />
+        /> */}
       </form>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -53,11 +53,13 @@ function Search() {
             movies.results.map((movie) => (
               <div>
                 <div>
-                  <img
-                    src={`${websiteURL}${movie.poster_path}`}
-                    alt=""
-                    className="w-full"
-                  />
+                  <Link to={`/movies/${movie.id}`}>
+                    <img
+                      src={`${websiteURL}${movie.poster_path}`}
+                      alt=""
+                      className="w-full"
+                    />
+                  </Link>
                 </div>
                 <div className="text-2xl font-bold ">{movie.title} </div>
               </div>

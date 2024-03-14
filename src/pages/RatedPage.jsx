@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Toprated from "../components/Toprated";
+import { Link } from "react-router-dom";
 
 function RatedPage() {
   const [topRatedMovies, setTopRatedMovies] = useState({});
@@ -37,11 +38,13 @@ function RatedPage() {
             topRatedMovies.results.map((ratedMovies) => (
               <div>
                 <div>
-                  <img
-                    src={`${websiteURL}${ratedMovies.poster_path}`}
-                    alt=""
-                    className="w-full"
-                  />
+                  <Link to={`/movies/${ratedMovies.id}`}>
+                    <img
+                      src={`${websiteURL}${ratedMovies.poster_path}`}
+                      alt=""
+                      className="w-full"
+                    />
+                  </Link>
                 </div>
                 <h2>{ratedMovies.title} </h2>
                 <div>{ratedMovies.release_date} </div>

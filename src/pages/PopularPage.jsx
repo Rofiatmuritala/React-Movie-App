@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function PopularPage() {
   const url =
@@ -57,11 +58,13 @@ function PopularPage() {
             movies.results.map((movie) => (
               <div>
                 <div>
-                  <img
-                    src={`${websiteURL}${movie.poster_path}`}
-                    alt=""
-                    className="w-full"
-                  />
+                  <Link to={`/movies/${movie.id}`}>
+                    <img
+                      src={`${websiteURL}${movie.poster_path}`}
+                      alt=""
+                      className="w-full"
+                    />
+                  </Link>
                 </div>
                 <div className="text-2xl font-bold ">{movie.title} </div>
               </div>
